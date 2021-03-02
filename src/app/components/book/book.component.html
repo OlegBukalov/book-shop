@@ -1,0 +1,15 @@
+<h2>Books</h2>
+
+<div *ngFor="let book of books">
+  <a [title]="book.name + ' details'">
+    {{ book.name }}
+  </a>
+
+  <p *ngIf="book.description">
+    Description: {{ book.description }}
+  </p>
+
+  <button (click)="onBuy()" [disabled]="!book.isAvailable">
+    Buy
+  </button>
+</div>
