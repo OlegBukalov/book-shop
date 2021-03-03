@@ -1,5 +1,6 @@
-import { Ibook } from './../../models/book.model';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartService } from './../../services/cart.service';
+import { IBook, IProduct } from './../../models/book.model';
+import { Component } from '@angular/core';
 
 import { books } from './../../books';
 
@@ -8,17 +9,19 @@ import { books } from './../../books';
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.scss']
 })
-export class BookComponent implements OnInit {
-  // @Input() book;
-  // @Output() notify = new EventEmitter();
-  public books: Ibook[] = books;
-  constructor() { }
+export class BookComponent {
 
-  ngOnInit(): void {
-  }
+  public books: IBook[] = books;
 
-  public onBuy(): void {
-    window.alert('The product has been shared!');
+  constructor( private cartService: CartService) { }
+
+  public onBuy(book: IBook): void {
+    const product: IProduct = {
+      id: book.id,
+      name: book.name,
+      amount: 1
+    };
+    this.cartService.addToCart(product);
   }
 
 }

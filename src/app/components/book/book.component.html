@@ -10,7 +10,7 @@
     <p> {{ book.createDate }} </p>
     <h4> {{ book.price | currency }} </h4>
 
-    <button class="buy-btn" (click)="onBuy()" [disabled]="!book.isAvailable">
+    <button class="buy-btn" (click)="onBuy(book)" [disabled]="!book.isAvailable">
       Buy
     </button>
 

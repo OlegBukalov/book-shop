@@ -1,4 +1,4 @@
-export interface Ibook {
+export interface IBook {
   id: number;
   name: string;
   description: string;
@@ -8,7 +8,7 @@ export interface Ibook {
   isAvailable: boolean;
 }
 
-export interface Iproduct {
+export interface IProduct {
   id: number;
   name: string;
   amount: number;
