@@ -22,6 +22,7 @@ export class BookComponent {
       amount: 1
     };
     this.cartService.addToCart(product);
+    window.alert("Your product has been added to the cart!");
   }
 
 }

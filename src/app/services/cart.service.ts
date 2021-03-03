@@ -8,7 +8,12 @@ export class CartService {
   public products: IProduct[] = [];
 
   public addToCart(product: IProduct): void {
-    this.products.push(product);
+    let findProduct = this.products.find(item => item.id === product.id);
+    if (findProduct) {
+      findProduct.amount++;
+    } else {
+      this.products.push(product);
+    }
   }
 
   public getProducts(): IProduct[] {

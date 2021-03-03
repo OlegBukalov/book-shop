@@ -1,3 +1,9 @@
 <h3>Cart</h3>
 
-<app-cart-item></app-cart-item>
+<div *ngFor="let product of products">
+
+  <app-cart-item [product]="product"></app-cart-item>
+
+</div>
+
+
