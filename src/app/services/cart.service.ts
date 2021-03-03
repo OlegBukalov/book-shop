@@ -15,4 +15,9 @@ export class CartService {
     return this.products;
   }
 
+  public deleteProductFromCart(product: IProduct): void {
+    const index = this.products.indexOf(product);
+    this.products.splice(index, 1);
+  }
+
 }

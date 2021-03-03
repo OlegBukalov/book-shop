@@ -13,6 +13,10 @@ export class CartItemComponent implements OnInit {
 
   constructor( private cartService: CartService ) { }
 
+  public deleteProductFromCart(product: IProduct): void {
+    this.cartService.deleteProductFromCart(product);
+  }
+
   ngOnInit(): void {
   }
 

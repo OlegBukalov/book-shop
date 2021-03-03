@@ -1,6 +1,9 @@
-<div class="cart-item" *ngFor="let product of products">
+<div *ngFor="let product of products">
 
-  <span> {{ product.name }} </span>
-  <span> {{ product.amount }} </span>
+  <div class="product-item">
+    <h4> {{ product.name }} </h4>
+    <input class="product-item-input" type="text" [(ngModel)]="product.amount" />
+    <button (click)="deleteProductFromCart(product)">Delete</button>
+  </div>
 
 </div>
