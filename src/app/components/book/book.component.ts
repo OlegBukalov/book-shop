@@ -1,3 +1,4 @@
+import { Ibook } from './../../models/book.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { books } from './../../books';
@@ -10,7 +11,7 @@ import { books } from './../../books';
 export class BookComponent implements OnInit {
   // @Input() book;
   // @Output() notify = new EventEmitter();
-  public books = books;
+  public books: Ibook[] = books;
   constructor() { }
 
   ngOnInit(): void {

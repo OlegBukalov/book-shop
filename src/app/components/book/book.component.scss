@@ -1,0 +1,17 @@
+.book-list {
+  display: flex;
+}
+
+.book-item {
+  width: 250px;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+
+.buy-btn {
+  justify-content: center;
+}
