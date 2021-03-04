@@ -4,10 +4,10 @@
 
   <div class="book-item" *ngFor="let book of books">
 
-    <h2> {{ book.name }} </h2>
+    <h3> {{ book.name }} </h3>
     <p> {{ book.description }} </p>
-    <p> {{ book.category }} </p>
-    <p> {{ book.createDate }} </p>
+    <span class="book-category"> {{ book.category }} </span>
+    <span> {{ book.createDate }} </span>
     <h4> {{ book.price | currency }} </h4>
 
     <button class="buy-btn" (click)="onBuy(book)" [disabled]="!book.isAvailable">

@@ -1,4 +1,4 @@
-import { BooksCategories } from "./models/book.model";
+import { BooksCategories } from "../../models/book.model";
 
 export const books = [
   {

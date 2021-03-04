@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { CartService } from './../../services/cart.service';
 import { IBook, IProduct } from './../../models/book.model';
-import { books } from './../../books';
+import { books } from '../../shared/mock-data/books';
 
 @Component({
   selector: 'app-book',
