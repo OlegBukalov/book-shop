@@ -1,9 +1,5 @@
-<!-- <div *ngFor="let product of products"> -->
-
   <div class="product-item">
     <h4> {{ product.name }} </h4>
     <input class="product-item-input" type="text" [(ngModel)]="product.amount" />
     <button (click)="deleteProductFromCart(product)">Delete</button>
   </div>
-
-<!-- </div> -->
