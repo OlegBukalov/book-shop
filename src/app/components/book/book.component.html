@@ -1,9 +1,7 @@
 <h2>Books</h2>
 
 <div class="book-list">
-
   <div class="book-item" *ngFor="let book of books">
-
     <h3> {{ book.name }} </h3>
     <p> {{ book.description }} </p>
     <span class="book-category"> {{ book.category }} </span>
@@ -13,7 +11,5 @@
     <button class="buy-btn" (click)="onBuy(book)" [disabled]="!book.isAvailable">
       Buy
     </button>
-
   </div>
-
 </div>
