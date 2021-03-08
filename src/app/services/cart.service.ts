@@ -24,6 +24,14 @@ export class CartService {
     return this.products;
   }
 
+  public getTotalQuantity(): number {
+    return this.totalQuantity;
+  }
+
+  public getTotalSum(): number {
+    return this.totalSum;
+  }
+
   public deleteProductFromCart(product: IProduct): void {
     const index = this.products.indexOf(product);
     this.products.splice(index, 1);
@@ -68,6 +76,7 @@ export class CartService {
       this.totalQuantity += item.amount;
       this.totalSum += item.priceSum;
     });
+    console.log(this.totalQuantity)
   }
 
   public findProduct(product: IProduct) {

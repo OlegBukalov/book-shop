@@ -2,7 +2,7 @@
 
 <div class="cart-list">
   <div class="cart-item" *ngFor="let product of products">
-    <app-cart-item [product]="product"></app-cart-item>
+    <app-cart-item [product]="product" (changeTotal)="changeTotal()"></app-cart-item>
   </div>
 </div>
 <div>
