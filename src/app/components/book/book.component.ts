@@ -18,7 +18,8 @@ export class BookComponent {
     const product: IProduct = {
       id: book.id,
       name: book.name,
-      amount: 1
+      amount: 1,
+      price: book.price
     };
     this.cartService.addToCart(product);
     window.alert("Your product has been added to the cart!");

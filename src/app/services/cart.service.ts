@@ -6,11 +6,14 @@ import { IProduct } from '../models/book.model';
 })
 export class CartService {
   public products: IProduct[] = [];
+  public totalQuantity = 0;
+  public totalSum = 0;
 
   public addToCart(product: IProduct): void {
-    let findProduct = this.products.find(item => item.id === product.id);
-    if (findProduct) {
-      findProduct.amount++;
+    const foundProduct = this.findProduct(product);
+    if (foundProduct) {
+      foundProduct.amount++;
+      foundProduct.price = foundProduct.amount * product.price;
     } else {
       this.products.push(product);
     }
@@ -23,5 +26,41 @@ export class CartService {
   public deleteProductFromCart(product: IProduct): void {
     const index = this.products.indexOf(product);
     this.products.splice(index, 1);
+  }
+
+  public increaseQuantity(product: IProduct): void {
+    const foundProduct = this.findProduct(product);
+    if (foundProduct) {
+      foundProduct.amount++;
+    } else {
+      window.alert("Some problem with increase quantity!");
+    }
+  }
+
+  public decreaseQuantity(product: IProduct): void {
+    const foundProduct = this.findProduct(product);
+    if (foundProduct) {
+      foundProduct.amount--;
+    } else {
+      window.alert("Some problem with decrease quantity!");
+    }
+  }
+
+  public removeAllBooks(): void {
+    this.products = [];
+  }
+
+  public updateCartData(): void {
+    this.totalQuantity = 0;
+    this.totalSum = 0;
+    this.products.forEach(item => {
+      this.totalQuantity += item.amount;
+      this.totalSum += item.price;
+    });
+  }
+
+  public findProduct(product: IProduct) {
+    const findProduct = this.products.find(item => item.id === product.id);
+    return findProduct;
   }
 }
