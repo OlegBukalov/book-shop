@@ -12,7 +12,16 @@ export class CartItemComponent {
   @Input() product!: IProduct;
   public products: IProduct[] = this.cartService.getProducts();
   constructor( private cartService: CartService ) { }
+
   public deleteProductFromCart(product: IProduct): void {
     this.cartService.deleteProductFromCart(product);
+  }
+
+  public increaseQuantity(): void {
+    this.cartService.increaseQuantity(this.product);
+  }
+
+  public decreaseQuantity(): void {
+    this.cartService.decreaseQuantity(this.product);
   }
 }

@@ -41,6 +41,9 @@ export class CartService {
     const foundProduct = this.findProduct(product);
     if (foundProduct) {
       foundProduct.amount--;
+      if (foundProduct.amount < 0) {
+        foundProduct.amount = 0;
+      }
     } else {
       window.alert("Some problem with decrease quantity!");
     }
