@@ -76,7 +76,6 @@ export class CartService {
       this.totalQuantity += item.amount;
       this.totalSum += item.priceSum;
     });
-    console.log(this.totalQuantity)
   }
 
   public findProduct(product: IProduct) {

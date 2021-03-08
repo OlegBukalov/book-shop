@@ -25,4 +25,10 @@ export class CartComponent implements OnInit {
     this.totalQuantity = this.cartService.getTotalQuantity();
     this.totalSum = this.cartService.getTotalSum();
   }
+
+  public clearCart(): void {
+    this.cartService.removeAllBooks();
+    this.products = this.cartService.getProducts();
+    this.changeTotal();
+  }
 }

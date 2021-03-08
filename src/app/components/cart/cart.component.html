@@ -5,11 +5,12 @@
     <app-cart-item [product]="product" (changeTotal)="changeTotal()"></app-cart-item>
   </div>
 </div>
-<div>
+<div class="total-span">
   <span>Total quantity: </span>
   <span> {{ totalQuantity }} </span>
 </div>
-<div>
+<div class="total-span">
   <span>Total sum: </span>
   <span> {{ totalSum }} </span>
 </div>
+<button (click)="clearCart()">Clear Cart</button>
