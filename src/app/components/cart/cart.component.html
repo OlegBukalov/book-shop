@@ -1,5 +1,7 @@
 <h2>Cart</h2>
 
-<div *ngFor="let product of products">
-  <app-cart-item [product]="product"></app-cart-item>
+<div class="cart-list">
+  <div class="cart-item" *ngFor="let product of products">
+    <app-cart-item [product]="product"></app-cart-item>
+  </div>
 </div>

@@ -13,6 +13,7 @@ export interface IProduct {
   name: string;
   amount: number;
   price: number;
+  priceSum: number;
 }
 
 export enum BooksCategories {

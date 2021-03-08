@@ -1,11 +1,12 @@
-  <div class="product-item">
-    <h4> {{ product.name }} </h4>
-    <div class="amount-container">
-      <input class="product-item-input" type="text" [(ngModel)]="product.amount" />
-      <div class="change-amount-btn-container">
-        <button class="change-amount-btn" (click)="increaseQuantity()">+</button>
-        <button class="change-amount-btn" (click)="decreaseQuantity()">-</button>
-      </div>
+<div class="product-item">
+  <h4> {{ product.name }} </h4>
+  <div class="amount-container">
+    <input class="product-item-input" type="text" [(ngModel)]="product.amount" />
+    <div class="change-amount-btn-container">
+      <button class="change-amount-btn" (click)="increaseQuantity()">+</button>
+      <button class="change-amount-btn" (click)="decreaseQuantity()">-</button>
     </div>
-    <button (click)="deleteProductFromCart(product)">Delete</button>
+    <span> {{ product.priceSum | currency }} </span>
   </div>
+  <button (click)="deleteProductFromCart(product)">Delete</button>
+</div>

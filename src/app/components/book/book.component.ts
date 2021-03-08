@@ -19,7 +19,8 @@ export class BookComponent {
       id: book.id,
       name: book.name,
       amount: 1,
-      price: book.price
+      price: book.price,
+      priceSum: book.price
     };
     this.cartService.addToCart(product);
     window.alert("Your product has been added to the cart!");

@@ -13,7 +13,7 @@ export class CartService {
     const foundProduct = this.findProduct(product);
     if (foundProduct) {
       foundProduct.amount++;
-      foundProduct.price = foundProduct.amount * product.price;
+      foundProduct.priceSum = foundProduct.amount * foundProduct.price;
     } else {
       this.products.push(product);
     }
@@ -32,6 +32,7 @@ export class CartService {
     const foundProduct = this.findProduct(product);
     if (foundProduct) {
       foundProduct.amount++;
+      foundProduct.priceSum = foundProduct.amount * foundProduct.price;
     } else {
       window.alert("Some problem with increase quantity!");
     }
@@ -41,8 +42,10 @@ export class CartService {
     const foundProduct = this.findProduct(product);
     if (foundProduct) {
       foundProduct.amount--;
+      foundProduct.priceSum = foundProduct.amount * foundProduct.price;
       if (foundProduct.amount < 0) {
         foundProduct.amount = 0;
+        foundProduct.priceSum = 0;
       }
     } else {
       window.alert("Some problem with decrease quantity!");
@@ -58,7 +61,7 @@ export class CartService {
     this.totalSum = 0;
     this.products.forEach(item => {
       this.totalQuantity += item.amount;
-      this.totalSum += item.price;
+      this.totalSum += item.priceSum;
     });
   }
 
