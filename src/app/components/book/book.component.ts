@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { CartService } from './../../services/cart.service';
 import { IBook, IProduct } from './../../models/book.model';
@@ -7,7 +7,8 @@ import { books } from '../../shared/mock-data/books';
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  styleUrls: ['./book.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookComponent {
 

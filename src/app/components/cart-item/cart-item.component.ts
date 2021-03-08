@@ -8,12 +8,9 @@ import { IProduct } from './../../models/book.model';
   templateUrl: './cart-item.component.html',
   styleUrls: ['./cart-item.component.scss']
 })
-
 export class CartItemComponent {
   @Input() product: IProduct;
-
   public products: IProduct[] = this.cartService.getProducts();
-
   constructor( private cartService: CartService ) {
     this.product = {
       id: 0,
@@ -21,9 +18,7 @@ export class CartItemComponent {
       amount: 0
     }
   }
-
   public deleteProductFromCart(product: IProduct): void {
     this.cartService.deleteProductFromCart(product);
   }
-
 }
