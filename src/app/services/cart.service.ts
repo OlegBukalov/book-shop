@@ -17,6 +17,7 @@ export class CartService {
     } else {
       this.products.push(product);
     }
+    this.updateCartData();
   }
 
   public getProducts(): IProduct[] {
@@ -26,6 +27,7 @@ export class CartService {
   public deleteProductFromCart(product: IProduct): void {
     const index = this.products.indexOf(product);
     this.products.splice(index, 1);
+    this.updateCartData();
   }
 
   public increaseQuantity(product: IProduct): void {
@@ -33,6 +35,7 @@ export class CartService {
     if (foundProduct) {
       foundProduct.amount++;
       foundProduct.priceSum = foundProduct.amount * foundProduct.price;
+      this.updateCartData();
     } else {
       window.alert("Some problem with increase quantity!");
     }
@@ -47,6 +50,7 @@ export class CartService {
         foundProduct.amount = 0;
         foundProduct.priceSum = 0;
       }
+      this.updateCartData();
     } else {
       window.alert("Some problem with decrease quantity!");
     }
@@ -54,6 +58,7 @@ export class CartService {
 
   public removeAllBooks(): void {
     this.products = [];
+    this.updateCartData();
   }
 
   public updateCartData(): void {

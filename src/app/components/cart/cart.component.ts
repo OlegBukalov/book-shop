@@ -10,6 +10,8 @@ import { IProduct } from '../../models/book.model';
 })
 export class CartComponent implements OnInit {
   public products!: IProduct[];
+  public totalQuantity = 0;
+  public totalSum = 0;
   constructor( private cartService: CartService ) { }
   ngOnInit(): void {
     this.products = this.cartService.getProducts();

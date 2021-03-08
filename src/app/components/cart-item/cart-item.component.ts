@@ -10,6 +10,8 @@ import { IProduct } from './../../models/book.model';
 })
 export class CartItemComponent {
   @Input() product!: IProduct;
+  public totalQuantity = 0;
+  public totalSum = 0;
   public products: IProduct[] = this.cartService.getProducts();
   constructor( private cartService: CartService ) { }
 
