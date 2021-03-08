@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-
 export interface IUser {
   id: number;
   login: string;
@@ -12,6 +8,9 @@ export interface IUser {
   city: string;
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class ConfigOptionsService {
   public user: IUser;
 
