@@ -24,5 +24,4 @@ export class CartService {
     const index = this.products.indexOf(product);
     this.products.splice(index, 1);
   }
-
 }
