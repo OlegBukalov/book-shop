@@ -11,6 +11,7 @@ import { IProduct } from './../../models/book.model';
 export class CartItemComponent {
   @Input() product!: IProduct;
   @Output() changeTotal = new EventEmitter();
+
   constructor( private cartService: CartService ) { }
 
   public deleteProductFromCart(product: IProduct): void {
