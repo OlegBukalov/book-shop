@@ -1,4 +1,4 @@
-import { BooksCategories } from "../../models/book.model";
+import { BooksCategories } from '../../models/book.model';
 
 export const books = [
   {
@@ -28,4 +28,4 @@ export const books = [
     createDate: 2018,
     isAvailable: true
   }
-]
+];

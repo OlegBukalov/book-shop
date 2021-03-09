@@ -45,7 +45,7 @@ export class CartService {
       foundProduct.priceSum = foundProduct.amount * foundProduct.price;
       this.updateCartData();
     } else {
-      window.alert("Some problem with increase quantity!");
+      window.alert('Some problem with increase quantity!');
     }
   }
 
@@ -60,7 +60,7 @@ export class CartService {
       }
       this.updateCartData();
     } else {
-      window.alert("Some problem with decrease quantity!");
+      window.alert('Some problem with decrease quantity!');
     }
   }
 
@@ -78,7 +78,7 @@ export class CartService {
     });
   }
 
-  public findProduct(product: IProduct) {
+  public findProduct(product: IProduct): any {
     const findProduct = this.products.find(item => item.id === product.id);
     return findProduct;
   }
