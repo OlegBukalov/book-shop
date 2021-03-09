@@ -1,3 +1,5 @@
+import { CartModule } from './modules/cart.module';
+import { BooksModule } from './modules/books.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -5,24 +7,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { BookComponent } from './components/book/book.component';
-import { CartComponent } from './components/cart/cart.component';
-import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { HeaderComponent } from './core/header/header.component';
+import { AboutComponent } from './layout/components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    CartComponent,
-    CartItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BooksModule,
+    CartModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { CartService } from './../../services/cart.service';
 import { IBook, IProduct } from './../../models/book.model';
-import { books } from '../../shared/mock-data/books';
 
 @Component({
   selector: 'app-book',
@@ -11,16 +10,17 @@ import { books } from '../../shared/mock-data/books';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookComponent {
+  @Input() book!: IBook;
 
-  public books: IBook[] = books;
-
-  constructor( private cartService: CartService) { }
+  constructor( private cartService: CartService ) { }
 
   public onBuy(book: IBook): void {
     const product: IProduct = {
       id: book.id,
       name: book.name,
-      amount: 1
+      amount: 1,
+      price: book.price,
+      priceSum: book.price
     };
     this.cartService.addToCart(product);
     window.alert("Your product has been added to the cart!");
