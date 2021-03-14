@@ -12,6 +12,8 @@ export class CartItemComponent {
   @Input() product!: IProduct;
   @Output() changeTotal = new EventEmitter();
 
+  public bcgColor = 'yellow';
+
   constructor( private cartService: CartService ) { }
 
   public deleteProductFromCart(product: IProduct): void {

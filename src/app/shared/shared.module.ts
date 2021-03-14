@@ -1,10 +1,13 @@
+import { ChangeBackgroundDirective } from './../directives/change-background.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrdersModule } from './../modules/orders.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ChangeBackgroundDirective
+  ],
   imports: [
     CommonModule,
     OrdersModule,
@@ -13,7 +16,8 @@ import { OrdersModule } from './../modules/orders.module';
   exports: [
     CommonModule,
     OrdersModule,
-    FormsModule
+    FormsModule,
+    ChangeBackgroundDirective
   ]
 })
 export class SharedModule { }
