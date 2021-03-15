@@ -9,11 +9,14 @@ import { IBook } from './../../models/book.model';
   styleUrls: ['./books-list.component.scss']
 })
 export class BooksListComponent implements OnInit {
-  public books: IBook[] = [];
+  public books!: IBook[];
 
   constructor(private bookService: BooksService) { }
 
   ngOnInit(): void {
-    this.books = this.bookService.getBooks();
+    this.bookService.getBooks()
+      .subscribe((data: IBook[]) => {
+        this.books = data;
+    })
   }
 }
