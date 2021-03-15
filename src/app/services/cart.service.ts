@@ -78,7 +78,7 @@ export class CartService {
     });
   }
 
-  public findProduct(product: IProduct): any {
+  public findProduct(product: IProduct): IProduct | undefined {
     const findProduct = this.products.find(item => item.id === product.id);
     return findProduct;
   }

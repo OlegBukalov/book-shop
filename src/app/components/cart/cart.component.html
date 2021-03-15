@@ -1,8 +1,13 @@
 <h2>Cart</h2>
 
 <div *ngIf="products.length>0; else emptyCart">
+  <select name="sort" size="1">
+    <option value="name" selected="selected">Name</option>
+    <option value="price">Price</option>
+    <option value="amount">Amount</option>
+  </select>
   <div class="cart-list">
-    <div class="cart-item" *ngFor="let product of products">
+    <div class="cart-item" *ngFor="let product of products | orderBy:sortName:sortFlag">
       <app-cart-item [product]="product" (changeTotal)="changeTotal()"></app-cart-item>
     </div>
   </div>

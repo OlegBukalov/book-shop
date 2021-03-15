@@ -13,6 +13,8 @@ export class CartComponent implements OnInit {
   public products!: IProduct[];
   public totalQuantity = 0;
   public totalSum = 0;
+  public sortName = 'name';
+  public sortFlag = true;
 
   constructor( private cartService: CartService ) { }
 

@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrdersModule } from './../modules/orders.module';
 import { ChangeFontDirective } from './directives/change-font.directive';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
   declarations: [
     ChangeBackgroundDirective,
     ChangeFontDirective,
+    OrderByPipe,
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { ChangeFontDirective } from './directives/change-font.directive';
     OrdersModule,
     FormsModule,
     ChangeBackgroundDirective,
-    ChangeFontDirective
+    ChangeFontDirective,
+    OrderByPipe
   ]
 })
 export class SharedModule { }
