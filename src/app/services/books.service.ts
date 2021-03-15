@@ -10,6 +10,6 @@ export class BooksService {
   constructor(private http: HttpClient) { }
 
   public getBooks(): Observable<any> {
-    return this.http.get("assets/books.json");
+    return this.http.get('assets/books.json');
   }
 }
