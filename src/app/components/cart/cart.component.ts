@@ -13,7 +13,12 @@ export class CartComponent implements OnInit {
   public products!: IProduct[];
   public totalQuantity = 0;
   public totalSum = 0;
-  public sortName = 'name';
+  public sortNameArr = [
+    'name',
+    'amount',
+    'price'
+  ];
+  public sortName = '';
   public sortFlag = true;
 
   constructor( private cartService: CartService ) { }
@@ -33,5 +38,9 @@ export class CartComponent implements OnInit {
     this.cartService.removeAllBooks();
     this.products = this.cartService.getProducts();
     this.changeTotal();
+  }
+
+  public setSortName(name: string): void {
+    this.sortName = name;
   }
 }
