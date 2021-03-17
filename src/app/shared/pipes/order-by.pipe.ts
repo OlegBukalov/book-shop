@@ -7,13 +7,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class OrderByPipe implements PipeTransform {
 
   transform(products: IProduct[], field: string, sortFlag: boolean = false): IProduct[] {
-    if (sortFlag) {
-      if (field === 'name' || field === 'amount' || field === 'price') {
+    if (field === 'name' || field === 'amount' || field === 'price') {
+      if (sortFlag) {
         products.sort((a, b) => a[field] > b[field] ? 1 : -1);
-      }
-    } else {
-      if (field === 'name' || field === 'amount' || field === 'price') {
-        products.sort((a, b) => a[field] > b[field] ? -1 : 1);
+      } else {
+          products.sort((a, b) => a[field] > b[field] ? -1 : 1);
       }
     }
     return products;
