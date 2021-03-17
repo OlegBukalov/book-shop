@@ -1,9 +1,9 @@
-<h3 [ngStyle]="{'color': 'green'}"> {{ book.name }} </h3>
+<h3> {{ book.name }} </h3>
 <p> {{ book.description }} </p>
 <span class="book-category"> {{ book.category }} </span>
 <span> {{ book.createDate }} </span>
 <h4> {{ book.price | currency }} </h4>
 
-<button class="buy-btn" (click)="onBuy(book)" [disabled]="!book.isAvailable">
+<button class="buy-btn" (click)="onBuy(book)" [disabled]="!book.isAvailable" [ngClass]="{disableBtn: !book.isAvailable}">
   Buy
 </button>
