@@ -1,7 +1,7 @@
 <h2>Books</h2>
 
 <div class="book-list">
-  <div class="book-item" *ngFor="let book of books">
+  <div class="book-item" *ngFor="let book of books | async">
     <app-book [book]="book"></app-book>
   </div>
 </div>

@@ -21,7 +21,7 @@ export class ConfigOptionsService {
       password: '',
       email: '',
       city: ''
-    }
+    };
   }
 
   public setUser(user: IUser): void {

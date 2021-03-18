@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { BooksService } from './../../services/books.service';
 import { IBook } from './../../models/book.model';
@@ -9,7 +10,7 @@ import { IBook } from './../../models/book.model';
   styleUrls: ['./books-list.component.scss']
 })
 export class BooksListComponent implements OnInit {
-  public books: IBook[] = [];
+  public books!: Observable<IBook[]>;
 
   constructor(private bookService: BooksService) { }
 

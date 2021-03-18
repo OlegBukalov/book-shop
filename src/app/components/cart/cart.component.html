@@ -1,16 +1,29 @@
 <h2>Cart</h2>
 
-<div class="cart-list">
-  <div class="cart-item" *ngFor="let product of products">
-    <app-cart-item [product]="product" (changeTotal)="changeTotal()"></app-cart-item>
+<div *ngIf="products.length>0; else emptyCart">
+  <label>Select sorting name: </label>
+  <select [(ngModel)]="sortName">
+    <option *ngFor="let name of sortNameArr" [value]="name">
+      {{ name }}
+    </option>
+  </select>
+  <label>Sort ascending</label>
+  <input type="checkbox" [(ngModel)]="sortFlag" checked>
+  <div class="cart-list">
+    <div class="cart-item" *ngFor="let product of products | orderBy:sortName:sortFlag">
+      <app-cart-item [product]="product" (changeTotal)="changeTotal()"></app-cart-item>
+    </div>
   </div>
+  <div class="total-span">
+    <span>Total quantity: </span>
+    <span> {{ totalQuantity }} </span>
+  </div>
+  <div class="total-span">
+    <span>Total sum: </span>
+    <span> {{ totalSum }} </span>
+  </div>
+  <button (click)="clearCart()">Clear Cart</button>
 </div>
-<div class="total-span">
-  <span>Total quantity: </span>
-  <span> {{ totalQuantity }} </span>
-</div>
-<div class="total-span">
-  <span>Total sum: </span>
-  <span> {{ totalSum }} </span>
-</div>
-<button (click)="clearCart()">Clear Cart</button>
+<ng-template #emptyCart>
+  Empty
+</ng-template>

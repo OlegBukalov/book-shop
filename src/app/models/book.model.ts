@@ -3,7 +3,7 @@ export interface IBook {
   name: string;
   description: string;
   price: number;
-  category: BooksCategories;
+  category: BooksCategories | string;
   createDate: number;
   isAvailable: boolean;
 }
