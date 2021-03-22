@@ -1,0 +1,29 @@
+<h3>Order</h3>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+	<div>
+		<label for="name">
+      Name
+    </label>
+		<input id="name" type="text" formControlName="name">
+  </div>
+	<div>
+		<label for="address">
+      Address
+    </label>
+			<input id="address" type="text" formControlName="address">
+  </div>
+  <div>
+		<label for="paymentMethod">
+      Payment method
+    </label>
+			<input id="paymentMethod" type="text" formControlName="paymentMethod">
+  </div>
+  <div>
+		<label for="comment">
+      Comment
+    </label>
+			<input id="comment" type="text" formControlName="comment">
+  </div>
+			<button class="button" type="submit" >Purchase</button>
+</form>
