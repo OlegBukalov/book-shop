@@ -1,3 +1,4 @@
+import { BookDetailsComponent } from './../components/book-details/book-details.component';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from './../shared/shared.module';
@@ -7,7 +8,8 @@ import { BookComponent } from 'src/app/components/book/book.component';
 @NgModule({
   declarations: [
     BooksListComponent,
-    BookComponent
+    BookComponent,
+    BookDetailsComponent
   ],
   imports: [
     SharedModule

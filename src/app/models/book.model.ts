@@ -5,6 +5,7 @@ export interface IBook {
   price: number;
   category: BooksCategories | string;
   createDate: number;
+  amount: number;
   isAvailable: boolean;
 }
 

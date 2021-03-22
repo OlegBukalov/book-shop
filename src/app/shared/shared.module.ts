@@ -1,9 +1,10 @@
-import { ChangeBackgroundDirective } from './directives/change-background.directive';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrdersModule } from './../modules/orders.module';
 import { ChangeFontDirective } from './directives/change-font.directive';
+import { ChangeBackgroundDirective } from './directives/change-background.directive';
 import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { OrderByPipe } from './pipes/order-by.pipe';
   imports: [
     CommonModule,
     OrdersModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { OrderByPipe } from './pipes/order-by.pipe';
     FormsModule,
     ChangeBackgroundDirective,
     ChangeFontDirective,
-    OrderByPipe
+    OrderByPipe,
+    RouterModule
   ]
 })
 export class SharedModule { }

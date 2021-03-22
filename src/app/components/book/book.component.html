@@ -1,4 +1,11 @@
-<h3> {{ book.name }} </h3>
+<h3>
+  <a
+      [title]="book.name + ' details'"
+      [routerLink]="['/books', book.id]"
+    >
+      {{ book.name }}
+    </a>
+</h3>
 <p> {{ book.description }} </p>
 <span class="book-category"> {{ book.category }} </span>
 <span> {{ book.createDate }} </span>

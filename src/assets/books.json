@@ -6,6 +6,7 @@
     "price": 100,
     "category": "horror",
     "createDate": 2020,
+    "amount": 10,
     "isAvailable": true
   },
   {
@@ -15,6 +16,7 @@
     "price": 1000,
     "category": "fantasy",
     "createDate": 2021,
+    "amount": 5,
     "isAvailable": false
   },
   {
@@ -24,6 +26,7 @@
     "price": 50,
     "category": "art",
     "createDate": 2018,
+    "amount": 23,
     "isAvailable": true
   }
 ]

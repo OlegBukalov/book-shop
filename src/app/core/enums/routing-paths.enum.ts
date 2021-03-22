@@ -1,4 +1,5 @@
 export enum RoutingPaths {
   bookPage = '',
-  cartPage = 'cart'
+  cartPage = 'cart',
+  bookDetails = 'books/:bookID'
 }
